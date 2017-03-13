@@ -1,0 +1,149 @@
+<!doctype html>
+<html class="no-js" lang="en" ng-app="chift">
+<head>
+    <meta charset="utf-8">
+    <title>Chift</title>
+    <link rel="shortcut icon" href="images/logo.png" type="image/x-icon">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css(.) styles/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/style.css">
+    <!-- endbuild -->
+</head>
+<body ng-controller="Main as main">
+<!--[if lt IE 7]>
+<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
+    your browser</a> to improve your experience.</p>
+<![endif]-->
+
+<header>
+    <button class="nav-toggler toggle-push-left">
+        <span class="glyphicon glyphicon-align-justify"></span>
+    </button>
+
+    <span class="title">
+        <img src="images/logo.png" class="title-logo">
+        hift
+    </span>
+</header>
+
+<nav class="menu push-menu-left">
+    <ul>
+        <li ng-hide="main.isLoggedIn() || main.isSignUpPage()">
+            <a ng-click="main.goSignUp()">
+                S'inscrire
+            </a>
+        </li>
+        <li ng-show="main.isLoggedIn() || main.isSignUpPage()">
+            <a ng-click="main.goHome()">
+                Accueil
+            </a>
+        </li>
+        <li ng-show="main.isLoggedIn()">
+            <a ng-click="main.logout()">
+                Déconnexion
+            </a>
+        </li>
+    </ul>
+</nav>
+
+<!-- Add your site or application content here -->
+<div ng-view="" data-ng-hide="main.showLoader()"></div>
+
+<div class="loadingSpinnerBackground" data-ng-show="main.showLoader()">
+    <div class="picto-spinner"></div>
+    <span class="loadingTitle">Loading...</span>
+</div>
+
+<footer class="container" style="margin-top: 15px" data-ng-show="main.showBackButton() && !main.showLoader()">
+    <div class="container">
+        <button onclick="window.history.back()" class="btn btn-lg btn-primary col-md-4">
+            <span class="glyphicon glyphicon-chevron-left"></span> Retour
+        </button>
+    </div>
+</footer>
+
+<!-- build:js(.) scripts/oldieshim.js -->
+<!--[if lt IE 9]>
+<script src="bower_components/es5-shim/es5-shim.js"></script>
+<script src="bower_components/json3/lib/json3.js"></script>
+<![endif]-->
+<!-- endbuild -->
+
+<!-- build:js(.) scripts/vendor.js -->
+<!-- bower:js -->
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+<script src="bower_components/angular-resource/angular-resource.js"></script>
+<script src="bower_components/angular-cookies/angular-cookies.js"></script>
+<script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+<script src="bower_components/angular-animate/angular-animate.js"></script>
+<script src="bower_components/angular-touch/angular-touch.js"></script>
+<script src="bower_components/angular-route/angular-route.js"></script>
+<!-- endbower -->
+<!-- endbuild -->
+
+<!-- build:js({.tmp,app}) scripts/scripts.js -->
+<script src="scripts/libs/nav.js"></script>
+<script src="scripts/libs/sha512.js"></script>
+<script src="scripts/libs/classie.js"></script>
+
+<script src="scripts/core/app.js"></script>
+<script src="scripts/core/app-run.js"></script>
+<script src="scripts/core/app-route.js"></script>
+<script src="scripts/core/app-config.js"></script>
+<script src="scripts/core/app-constants.js"></script>
+
+<script src="scripts/filters/cut.filter.js"></script>
+
+<script src="scripts/logic/main.logic.js"></script>
+<script src="scripts/logic/list.logic.js"></script>
+<script src="scripts/logic/share.logic.js"></script>
+<script src="scripts/logic/signup.logic.js"></script>
+<script src="scripts/logic/account.logic.js"></script>
+<script src="scripts/logic/getlist.logic.js"></script>
+<script src="scripts/logic/editlist.logic.js"></script>
+<script src="scripts/logic/viewlists.logic.js"></script>
+<script src="scripts/logic/editfriend.logic.js"></script>
+<script src="scripts/logic/friendslist.logic.js"></script>
+<script src="scripts/logic/lostpassword.logic.js"></script>
+<script src="scripts/logic/lookforafriend.logic.js"></script>
+<script src="scripts/logic/changepassword.logic.js"></script>
+<script src="scripts/logic/cancelpassword.logic.js"></script>
+
+<script src="scripts/controllers/main.controller.js"></script>
+<script src="scripts/controllers/menu.controller.js"></script>
+<script src="scripts/controllers/list.controller.js"></script>
+<script src="scripts/controllers/share.controller.js"></script>
+<script src="scripts/controllers/signup.controller.js"></script>
+<script src="scripts/controllers/logout.controller.js"></script>
+<script src="scripts/controllers/account.controller.js"></script>
+<script src="scripts/controllers/getlist.controller.js"></script>
+<script src="scripts/controllers/editlist.controller.js"></script>
+<script src="scripts/controllers/viewlists.controller.js"></script>
+<script src="scripts/controllers/createlist.controller.js"></script>
+<script src="scripts/controllers/editfriend.controller.js"></script>
+<script src="scripts/controllers/friendslist.controller.js"></script>
+<script src="scripts/controllers/lostpassword.controller.js"></script>
+<script src="scripts/controllers/lookforafriend.controller.js"></script>
+<script src="scripts/controllers/changepassword.controller.js"></script>
+<script src="scripts/controllers/cancelpassword.controller.js"></script>
+
+<script src="scripts/services/list.service.js"></script>
+<script src="scripts/services/server.service.js"></script>
+<script src="scripts/services/crypto.service.js"></script>
+<script src="scripts/services/loader.service.js"></script>
+<script src="scripts/services/ioshandler.service.js"></script>
+<script src="scripts/services/stringservice.service.js"></script>
+<script src="scripts/services/loaderinterceptor.service.js"></script>
+<!-- endbuild -->
+</body>
+</html>

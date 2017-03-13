@@ -1,0 +1,27 @@
+<div class="container">
+
+    <form role="form" class="col-md-12">
+
+        <h3 class="text-center">{{editfriend.friend.firstname}} {{editfriend.friend.lastname}}</h3>
+
+        <div class="form-group menu-vertical-center">
+
+            <div class="col-xs-12 contact-info">
+                {{editfriend.friend.email}}
+            </div>
+
+            <div
+                class="col-xs-8 col-xs-offset-2 col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2 main-no-padding-left">
+
+                <button ng-click="editfriend.deleteFriend(editfriend.friend._id)"
+                        class="btn btn-danger btn-lg col-xs-12 col-sm-12 col-md-12">
+                    Supprimer
+                </button>
+
+            </div>
+
+        </div>
+
+    </form>
+
+</div>

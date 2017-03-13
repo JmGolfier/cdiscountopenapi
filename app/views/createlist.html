@@ -1,0 +1,31 @@
+<div class="container menu">
+
+    <div class="col-sm-12 col-md-6 col-md-push-3 menu-vertical-center">
+
+        <div ng-repeat="item in createList.options">
+
+            <h3 class="text-center" ng-bind="item.title"></h3>
+
+            <a ng-repeat="link in item.links" ng-href="{{link.link}}" class="btn btn-lg menu-item {{link.style}}">
+
+                <span class="glyphicon" ng-class="link.icon"></span>
+                <span class="menu-item-title" ng-bind="link.title"></span>
+
+            </a>
+
+        </div>
+
+        <br>
+
+        <div class="text-left">
+
+            <button onclick="window.history.back()"
+                    class="btn btn-primary btn-lg col-xs-5 col-sm-5 col-md-5">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+            </button>
+
+        </div>
+
+    </div>
+
+</div>

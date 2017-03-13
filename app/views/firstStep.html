@@ -1,0 +1,125 @@
+<div class="container">
+
+    <form role="form" class="col-sm-12 col-md-6 col-md-push-3" data-ng-hide="list.showResults">
+
+        <h3 class="text-center">Créer une liste</h3>
+
+        <div class="form-group">
+            <label for="listName">Nom de la liste</label>
+            <input type="text" class="form-control" id="listName" placeholder="ex : Cadeaux de Noël"
+                   data-ng-model="list.listName">
+        </div>
+
+        <div class="form-group">
+            <label for="dateEnd">
+                Date de fin <span data-ng-show="list.type === 'simple'">(facultatif)</span>
+            </label>
+
+            <div class="row">
+                <div class="col-md-12">
+
+                    <!--<div class="input-group">-->
+                        <!--<input type="date" class="form-control" id="dateEnd" placeholder="Choisir une date de fin"-->
+                               <!--data-ng-model="list.dateEnd">-->
+                        <!--<span class="input-group-btn">-->
+                            <!--<button class="btn btn-default" type="button">-->
+                                <!--<span class="glyphicon glyphicon-calendar"></span>-->
+                            <!--</button>-->
+                        <!--</span>-->
+                    <!--</div>-->
+
+                    <div class="input-group">
+                        <span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-calendar"></span></span>
+                        <input type="date" class="form-control" id="dateEnd" placeholder="Choisir une date de fin"
+                               data-ng-model="list.dateEnd">
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="searchProduct">Ajouter un produit</label>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="searchProduct"
+                               placeholder="ex : Apple iPhone 6 Plus"
+                               data-ng-model="list.productName">
+                        <span class="input-group-btn">
+                            <button class="btn btn-primary" type="button" data-ng-click="list.search()">
+                                <span class="glyphicon glyphicon-search"></span>
+                            </button>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group" data-ng-show="list.productList.length > 0">
+            <label for="productList">Liste des produits</label>
+            <ul id="productList" class="item-list col-xs-12">
+                <li data-ng-repeat="item in list.productList" class="item col-xs-12">
+                    <div class="text-left col-xs-8">{{item.name}}</div>
+                    <div class="text-right col-xs-4">
+                        <strong>{{item.price}}&euro;</strong>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="form-group" data-ng-show="list.productList.length > 0">
+            <label for="productList">Total</label>
+
+            <div class="col-md-12 text-center">
+                <h3 style="margin-top: 0">
+                    <strong class="label label-info">{{list.getTotal()}}&euro;</strong>
+                </h3>
+            </div>
+        </div>
+
+        <div class="text-center">
+
+            <a data-ng-click="list.saveAndShare()" class="btn btn-primary btn-lg col-xs-12 col-sm-12 col-md-12"
+               data-ng-disabled="!list.isValidForm()">
+                Suivant
+            </a>
+
+        </div>
+
+    </form>
+
+    <div class="col-sm-12 col-md-12" data-ng-show="list.showResults">
+
+        <div data-ng-repeat="item in list.results" class="result col-xs-12 col-sm-12 col-md-12"
+             data-ng-click="list.addToList(item)">
+            <div class="col-xs-4">
+                <img data-ng-src="{{item.img}}">
+            </div>
+
+            <div class="col-xs-8 name">
+                <span>{{item.name}}</span>
+            </div>
+
+            <br><br>
+
+            <div class="col-xs-12">
+                <span><strong>{{item.price}}&euro;</strong></span>
+            </div>
+        </div>
+
+        <h3 data-ng-hide="list.hasResults" class="text-center">
+            Aucun résultats
+        </h3>
+
+        <div>
+            <button class="btn btn-lg btn-primary col-xs-12 col-sm-12 col-md-6 col-md-offset-3 result-close"
+                    data-ng-click="list.closeResults()">
+                Fermer
+            </button>
+        </div>
+
+    </div>
+
+</div>

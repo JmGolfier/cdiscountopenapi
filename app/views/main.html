@@ -1,0 +1,52 @@
+<div class="container col-md-12">
+
+    <div class="col-md-12 alert alert-danger" role="alert"
+         ng-show="main.error">
+        <strong>Oops!</strong> {{main.errorMessage}}
+    </div>
+
+    <form role="form" class="col-xs-12 col-sm-6 col-md-4 col-lg-4 col-sm-offset-3 col-md-offset-4 col-lg-offset-4">
+
+        <div class="form-group menu-vertical-center">
+            <label for="username">Email</label>
+            <input type="email" class="form-control" id="username" placeholder="Email" ng-model="main.username"
+                   autocomplete autofocus>
+        </div>
+
+        <div class="form-group menu-vertical-center">
+            <label for="password">Mot de passe</label>
+            <input type="password" class="form-control" id="password" placeholder="Mot de passe"
+                   ng-model="main.password">
+
+            <div class="col-md-12 text-right main-no-padding-right">
+                <a href="#/lostpassword" class="btn btn-link main-no-padding-right no-uppercase">Mot de passe oublié ?</a>
+            </div>
+        </div>
+
+        <div class="checkbox menu-vertical-center" ng-show="main.canRememberUser">
+            <label>
+                <input type="checkbox" ng-model="main.rememberMe"> Rester connecté
+            </label>
+        </div>
+
+        <div class="form-group menu-vertical-center">
+
+            <div class="col-xs-8 col-xs-offset-2 col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2 main-no-padding-left">
+                <button type="submit" ng-click="main.login()"
+                        class="btn btn-primary btn-lg col-xs-12 col-sm-12 col-md-12">
+                    Connexion
+                </button>
+            </div>
+
+            <!--<div class="col-xs-6 col-sm-6 col-md-6 main-no-padding-right">-->
+                <!--<button type="submit"-->
+                        <!--class="btn btn-primary btn-facebook btn-lg col-xs-12 col-sm-12 col-md-12">-->
+                    <!--Facebook-->
+                <!--</button>-->
+            <!--</div>-->
+
+        </div>
+
+    </form>
+
+</div>

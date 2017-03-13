@@ -1,0 +1,48 @@
+<div class="container">
+
+    <form role="form" class="col-sm-12 col-md-6 col-md-push-3">
+
+        <h3 class="text-center">Chercher une liste</h3>
+
+        <div data-ng-hide="getlist.hasList">
+            <div class="form-group">
+                <label for="code">Saisir le code de la liste</label>
+                <input type="text" class="form-control" id="code" placeholder="Code"
+                       ng-model="getlist.code">
+            </div>
+
+            <div class="text-center">
+
+                <button ng-click="getlist.look()" class="btn btn-lg btn-primary">Rechercher</button>
+
+            </div>
+        </div>
+
+        <div data-ng-show="getlist.hasList">
+            <div class="form-group" ng-show="getlist.foundList">
+                <ul id="lists" class="item-list col-xs-12">
+                    <li class="item col-xs-12">
+                        <a data-ng-href="#/editList/{{getlist.list.code}}">
+                            <div class="text-left col-xs-7">{{getlist.list.name}}</div>
+                            <div class="text-right col-xs-5">
+                                <strong>{{getlist.list.total}} &euro;</strong>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="form-group" ng-hide="getlist.foundList">
+                <h4>Aucune liste ne correspond au code saisi</h4>
+            </div>
+
+            <div class="text-center">
+
+                <button ng-click="getlist.hasList = false" class="btn btn-lg btn-primary">Retour</button>
+
+            </div>
+        </div>
+
+    </form>
+
+</div>

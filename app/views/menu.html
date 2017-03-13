@@ -1,0 +1,16 @@
+<div class="container menu">
+
+    <div class="col-sm-12 col-md-6 col-md-push-3 menu-vertical-center" ng-repeat="item in menu.options">
+
+        <h3 class="text-center" ng-bind="item.title"></h3>
+
+        <a ng-repeat="link in item.links" ng-href="{{link.link}}" class="btn btn-lg menu-item {{link.style}}">
+
+            <span class="glyphicon" ng-class="link.icon"></span>
+            <span class="menu-item-title" ng-bind="link.title"></span>
+
+        </a>
+
+    </div>
+
+</div>

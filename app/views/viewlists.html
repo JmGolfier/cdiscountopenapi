@@ -1,0 +1,26 @@
+<div class="container">
+
+    <form role="form" class="col-md-12">
+
+        <h3 class="text-center">Voir mes listes <span data-ng-show="viewlists.type === 'shared'">partagées</span></h3>
+
+        <div class="form-group" ng-show="viewlists.lists.length > 0">
+            <ul id="lists" class="item-list col-xs-12">
+                <li ng-repeat="item in viewlists.lists" class="item col-xs-12">
+                    <a data-ng-href="#/editList/{{item.code}}">
+                        <div class="text-left col-xs-7">{{item.name}}</div>
+                        <div class="text-right col-xs-5">
+                            <strong>{{item.total}} &euro;</strong>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="form-group" ng-hide="viewlists.lists.length > 0">
+            <h4>Aucune liste</h4>
+        </div>
+
+    </form>
+
+</div>

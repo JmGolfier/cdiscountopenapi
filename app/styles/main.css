@@ -1,0 +1,214 @@
+body {
+    padding-top: 70px;
+    padding-bottom: 20px;
+    background-color: ghostwhite;
+}
+
+header {
+    z-index: 999;
+    width: 100%;
+    top: 0;
+    position: fixed;
+    padding: 5px;
+    padding-right: 10px;
+    height: 50px;
+    color: white;
+    font-size: 2em;
+    background-color: #428bca;
+    border-bottom: 1px solid white;
+}
+
+header button {
+    border: 0;
+    background: transparent;
+    float: left;
+}
+
+header span.title {
+    float: right;
+}
+
+header span.title img.title-logo {
+    top: -2px;
+    left: 23px;
+    width: 50px;
+    position: relative;
+}
+
+.btn,
+.alert,
+.form-control {
+    border-radius: 0;
+}
+
+.btn-facebook {
+    color: #ffffff;
+    background-color: #4b6baf;
+}
+
+.nav-toggler,
+.nav-toggler:active,
+.nav-toggler:focus {
+    outline: 0;
+}
+
+/* ICONS */
+
+.share-icon {
+    float: left;
+}
+
+/* LIST */
+
+.item-list {
+    padding: 0;
+    list-style-type: none;
+}
+
+.item-list li:first-child {
+    border: 1px solid #cccccc;
+}
+
+.item-list li {
+    padding: 5px;
+    width: 100%;
+    border: 1px solid #cccccc;
+    border-top: 0;
+    background: #ffffff;
+}
+
+.item-list .item {
+    cursor: pointer;
+}
+
+/* MENU */
+
+.menu-item {
+    width: 100%;
+    margin-top: 10px;
+    text-align: left;
+}
+
+.menu-item-title {
+    margin-left: 10px;
+}
+
+.menu-vertical-center {
+    display: block;
+    float: none;
+}
+
+.main-no-padding-left {
+    padding-left: 0;
+}
+
+.main-no-padding-right {
+    padding-right: 0;
+}
+
+/* SHARE */
+
+.share-code {
+    font-weight: bold;
+    font-size: 2em;
+}
+
+/* SEARCH RESULT */
+
+.result {
+    cursor: pointer;
+    padding: 0;
+    border: 1px solid #eee;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    background: #fff;
+}
+
+.result img {
+    width: 50px;
+}
+
+.result .name {
+    margin-top: 20px;
+}
+
+.result-close {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+/* FRIENDS */
+
+.contact-info {
+
+    margin-bottom: 20px;
+
+}
+
+
+/* LOADER STYLESHEET */
+
+.loadingSpinnerBackground {
+
+    background-color: rgba(0, 0, 0, .4);
+    width: 280px;
+    height: 280px;
+    margin: 100px auto 0 auto;
+    border-radius: 1000px;
+    border: 1px solid #ffffff;
+
+}
+
+.loadingSpinnerBackground .picto-spinner {
+
+    background-image: url('../images/logo.png');
+    width: 128px;
+    height: 128px;
+    margin: 45px auto 0 auto;
+
+    -webkit-animation: spin 1s linear infinite;
+    -moz-animation: spin 1s linear infinite;
+    -ms-animation: spin 1s linear infinite;
+    -o-animation: spin 1s linear infinite;
+    animation: spin 1s linear infinite;
+
+}
+
+.loadingSpinnerBackground .loadingTitle {
+
+    font-size: 2em;
+    margin: 50px 0 0 70px;
+    width: 142px;
+    color: #ffffff;
+
+}
+
+@-webkit-keyframes spin {
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@-moz-keyframes spin {
+    100% {
+        -moz-transform: rotate(360deg);
+    }
+}
+
+@-o-keyframes spin {
+    100% {
+        -moz-transform: rotate(360deg);
+    }
+}
+
+@-o-keyframes spin {
+    100% {
+        -moz-transform: rotate(360deg);
+    }
+}
+
+@keyframes spin {
+    100% {
+        transform: rotate(360deg);
+    }
+}
